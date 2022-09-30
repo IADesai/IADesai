@@ -5,5 +5,8 @@
 }
 
 header{
-    background-image: url(Background.jfif)
+    background-image: url(Background.jfif);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
