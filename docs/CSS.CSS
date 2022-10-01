@@ -4,9 +4,13 @@
     font-family: Century;
 }
 
-header{
-    background-image: url(../Background.JPEG);
-    height: 100vh;
+.background{
+    height: 100%;
+    width: 100%;
+    background-image: url(Background.JPEG);
     background-size: cover;
     background-position: center;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
 }
