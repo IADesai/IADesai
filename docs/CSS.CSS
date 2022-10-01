@@ -5,7 +5,7 @@
 }
 
 header{
-    background-image: url(../docs/Background.JPEG);
+    background-image: url(../Background.JPEG);
     height: 100vh;
     background-repeat:no-repeat;
     background-size: cover;
