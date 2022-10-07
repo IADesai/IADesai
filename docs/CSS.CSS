@@ -7,7 +7,7 @@
 header{
     background-image: url(../Background.JPEG);
     height: 100vh;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
