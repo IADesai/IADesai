@@ -31,8 +31,8 @@ header {
 .background,
 .foreground {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 108%;
+    width: 108%;
     object-fit: cover;
     z-index: -1;
 }
