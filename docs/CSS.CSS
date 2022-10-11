@@ -11,6 +11,7 @@ body {
 }
 
 header {
+    right: 1vh;
     position: relative;
     display: flex;
     justify-content: center;
