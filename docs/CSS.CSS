@@ -38,7 +38,7 @@ header {
 }
 
 .title {
-    font-size: 7rem;
+    font-size: 6rem;
     text-align: center;
     overflow:hidden;
     text-overflow: ellipsis;
