@@ -26,7 +26,6 @@ header {
 }
 
 .foreground {
-    left: 0px;
     transform: translateZ(-5px) scale(1.5);
 }
 
