@@ -1,7 +1,4 @@
-
-
 body {
-    overflow-x: hidden;
     margin: 0;
 }
 
@@ -22,6 +19,13 @@ header {
     height: 100%;
     transform-style: preserve-3d;
     z-index: -1;
+}
+
+.backgrounda{
+    background-image:url(Background.JPEG);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .background {
