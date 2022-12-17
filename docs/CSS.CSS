@@ -7,9 +7,12 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
-
 }
 
+nav {
+    position:absolute;
+    top: 8px;
+}
 header {
     right:8px;
     position: relative;
@@ -19,13 +22,6 @@ header {
     height: 100%;
     transform-style: preserve-3d;
     z-index: -1;
-}
-
-.backgrounda{
-    background-image:url(Background.JPEG);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .background {
