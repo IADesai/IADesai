@@ -9,6 +9,28 @@
         <link rel="stylesheet" type="text/css" href="Contact.CSS">
     </head>
     <body>
-        
+        <header>
+            <div class="logo">Ibrahim Ayub Desai</div>
+            <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+            </div>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="AboutMe.html" >About Me</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="Contact.html"class="active">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <script>
+            hamburger = document.querySelector('.hamburger');
+            hamburger.onclick=function(){
+                navBar=document.querySelector('.nav-bar');
+                navBar.classList.toggle('active');
+            }
+        </script>
     </body>
 </html>
