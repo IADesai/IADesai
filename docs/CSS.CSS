@@ -145,7 +145,7 @@ a:active {
     .nav-bar{
         height: 0;
         position: absolute;
-        top: 700px;
+        top: 128vh;
         left: 0;
         right: 0;
         width: 100vw;
