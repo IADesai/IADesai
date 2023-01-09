@@ -175,7 +175,8 @@ a:active {
 }
 
 section {
-    font-size: 2rem;
+    font-size: 3.8vw;
+    text-justify: auto;
     padding: 2rem;
     background-color: #333;
     color: white;
