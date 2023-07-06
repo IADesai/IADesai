@@ -11,7 +11,7 @@
 
 - The repo this README is in is actually the repo for my website 📶
 
-- 📝 Check it out [here](www.ibrahimayubdesai.com)
+- 📝 Check it out **[here](www.ibrahimayubdesai.com)**
 
 - 📫 How to reach me **ibrahim.desai02@gmail.com**
 
