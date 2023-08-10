@@ -3,7 +3,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=iadesai&label=Profile%20views&color=0e75b6&style=flat" alt="iadesai" /> </p>
 
-- 🌱 I’m currently learning **SE Fundamentals**
+- 🌱 I’m currently learning **Data Engineering**
   
 - Have a look at some of my pinned repositories 📌
 
