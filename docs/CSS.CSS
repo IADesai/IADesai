@@ -1,59 +1,140 @@
 body {
-    margin: 0;
-    background-color: #333;
+  margin: 0;
+  background-color: #333;
 }
 
 .wrapper {
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    perspective: 10px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
 }
 
 header {
-    right:8px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    transform-style: preserve-3d;
-    z-index: -1;
+  right: 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
 }
 
 .background {
-    transform: translateZ(-10px) scale(2);
+  transform: translateZ(-10px) scale(2);
 }
 
 .foreground {
-    transform: translateZ(-5px) scale(1.5);
+  transform: translateZ(-5px) scale(1.5);
 }
 
 .background,
 .foreground {
-    position: absolute;
-    height: 100%;
-    width: 103%;
-    object-fit: cover;
-    z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 103%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .title {
-    font-size: 8vw;
-    text-align: center;
-    color: white;
-    text-shadow: 0 0 5px black;;
+  font-family: "Trebuchet MS";
+  font-size: 8vw;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 5px black;
 }
 
 bar {
-    width:100%;
-    padding-bottom: 2rem;
-    background-color: #333;
-    color:#333;
+  width: 100%;
+  padding-bottom: 2rem;
+  background-color: #333;
+  color: #333;
 }
 
 nav {
-    font-family: 'Bahnschrift SemiBold';
+  font-family: "Bahnschrift SemiBold";
+  background: #333;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+nav div ui {
+  text-align: center;
+}
+
+nav div ui li {
+  display: inline-block;
+}
+
+nav div ui li a {
+  color: white;
+  font-size: 20px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.2s;
+  margin: 0 7.8vw;
+}
+
+a:hover {
+  color: black;
+  background: white;
+}
+a.active {
+  color: black;
+  background: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+@media only screen and (max-width: 1866px) {
+  nav div ui li a {
+    margin: 0 7vw;
+  }
+}
+@media only screen and (max-width: 1575px) {
+  nav div ui li a {
+    margin: 0 6vw;
+  }
+}
+@media only screen and (max-width: 1335px) {
+  nav div ui li a {
+    margin: 0 5vw;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  nav div ui li a {
+    margin: 0 4vw;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 6px 0;
+  }
+  nav {
     background: #333;
     width: 100%;
     height: 80px;
@@ -61,123 +142,68 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 0 100px;
-    box-sizing: border-box;
-}
-
-nav div ui{
-    text-align:center;
-}
-
-nav div ui li{
-    display: inline-block;
-}
-
-nav div ui li a{
-
-    color: white;
-    font-size: 20px;
-    padding: 10px 25px;
-    border-radius: 50px;
-    transition: 0.2s;
-    margin:0 7.8vw;
-}
-
-a:hover {
-    color: black;
-    background: white;
-}
-a.active {
-    color: black;
-    background: white;
-}
-
-a:link {
-    text-decoration: none;
-}
-a:visited {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: none;
-}
-a:active {
-    text-decoration: none;
-}
-@media only screen and (max-width: 1866px) {
-    nav div ui li a{
-        margin:0 7vw;
-    }
-}
-@media only screen and (max-width: 1575px) {
-    nav div ui li a{
-        margin:0 6vw;
-    }
-}
-@media only screen and (max-width: 1335px) {
-    nav div ui li a{
-        margin:0 5vw;
-    }
-}
-@media only screen and (max-width: 1160px) {
-    nav div ui li a{
-        margin:0 4vw;
-    }
-}
-@media only screen and (max-width: 1020px) {
-    .hamburger{
-        display: block;
-        cursor: pointer;
-    }
-    .hamburger .line{
-        width: 30px;
-        height: 3px;
-        background: white;
-        margin: 6px 0;
-    }
-    nav {
-        background: #333;
-        width: 100%;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 100px;
-    }
-    .nav-bar{
-        height: 0;
-        position: absolute;
-        top: calc(100vh + 80px);
-        left: 0;
-        right: 0;
-        width: 100vw;
-        background: #333;
-        transition:0.5s;
-        overflow: hidden;
-    }
-    .nav-bar.active{
-        height:450px;
-    }
-    .nav-bar ui li {
-        display: block;
-        width: fit-content;
-        margin: 58px auto 0 auto;
-        align-items: center;
-        text-align: center;
-        transition: 0.5s;
-        opacity: 1;
-    }
-    .nav-bar.active ui {
-        opacity: 1;
-    }
-    .nav-bar ui li a{
-        margin-bottom:28px;
-    }
+  }
+  .nav-bar {
+    height: 0;
+    position: absolute;
+    top: calc(100vh + 80px);
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #333;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .nav-bar.active {
+    height: 450px;
+  }
+  .nav-bar ui li {
+    display: block;
+    width: fit-content;
+    margin: 58px auto 0 auto;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 1;
+  }
+  .nav-bar.active ui {
+    opacity: 1;
+  }
+  .nav-bar ui li a {
+    margin-bottom: 28px;
+  }
 }
 
 section {
-    font-size: 3.8vw;
-    text-justify: auto;
-    padding: 2rem;
-    background-color: #333;
-    color: white;
+  font-family: "Bahnschrift SemiBold";
+  font-size: 3.8vw;
+  text-justify: auto;
+  padding: 2rem;
+  background-color: #333;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: 10px; /* adjust it to your needs */
+}
+
+.paragraph1 {
+  margin: 0;
+  padding-bottom: 0px; /* adjust it to your needs */
+}
+
+.paragraph2 {
+  margin: 0;
+  padding-bottom: 0px; /* adjust it to your needs */
+}
+
+.pbar {
+  margin: 0;
+  padding: 0px 0; /* adjust it to your needs */
+  letter-spacing: -0.05em;
+}
+
+.paragraph3 {
+  font-size: 2.8vw;
 }
