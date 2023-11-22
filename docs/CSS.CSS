@@ -231,4 +231,42 @@ h1 {
 
 .paragraph3 {
   font-size: 0.8em;
+  padding-right: 1em;
+  padding-top: 0.3em;
+}
+
+.headshot {
+  float: right;
+  width: 6em;
+  height: auto;
+  border-radius: 50%;
+  padding-right: 2em;
+  margin-bottom: 2vh;
+  margin-top: 0.2em;
+}
+
+/* Media query for screens with a max width of x pixels */
+@media screen and (max-width: 700px) {
+  .headshot {
+    float: none;
+    display: block;
+    margin: 0 auto; /* Center the image */
+    padding-right: 0;
+  }
+  h1 {
+    padding-top: 0.5em;
+    margin: 0;
+    padding-bottom: 10px; /* adjust it to your needs */
+    text-align: center;
+  }
+  .paragraph1 {
+    margin: 0;
+    padding-bottom: 0px; /* adjust it to your needs */
+    text-align: center;
+  }
+  .paragraph2 {
+    margin: 0;
+    padding-bottom: 0px; /* adjust it to your needs */
+    text-align: center;
+  }
 }
