@@ -61,20 +61,23 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px;
-  box-sizing: border-box;
+  padding: 100px box-sizing border-box;
 }
 
 nav div ui {
+  display: flex;
+  flex-direction: row;
+  padding: 0; /* Add this to remove default padding */
+  list-style: none; /* Add this to remove default list styling */
+  white-space: nowrap; /* Prevents the text from wrapping onto the next line */
+}
+
+nav div ul li {
+  display: inline-block;
   text-align: center;
 }
 
-nav div ui li {
-  display: inline-block;
-}
-
 nav div ui li a {
-  color: white;
   font-size: 20px;
   padding: 10px 25px;
   border-radius: 50px;
@@ -87,8 +90,8 @@ a:hover {
   background: white;
 }
 a.active {
-  color: black;
-  background: white;
+  color: white;
+  background: #424949;
 }
 
 a:link {
@@ -154,24 +157,45 @@ a:active {
     transition: 0.5s;
     overflow: hidden;
   }
+
   .nav-bar.active {
-    height: 450px;
-  }
-  .nav-bar ui li {
-    display: block;
-    width: fit-content;
-    margin: 58px auto 0 auto;
+    /* existing styles */
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
-    transition: 0.5s;
-    opacity: 1;
+    justify-content: center;
+    height: 450px; /* or however tall you want it */
   }
-  .nav-bar.active ui {
-    opacity: 1;
+
+  .nav-bar ui {
+    /* This should be 'ul', not 'ui' */
+    display: flex;
+    flex-direction: column; /* This will stack the list items vertically */
+    padding: 0; /* Reset padding */
+    list-style: none; /* Remove bullet points from the list */
+    width: 100%; /* Full width of the nav-bar */
+    text-align: center; /* Center the text of each list item */
   }
-  .nav-bar ui li a {
-    margin-bottom: 28px;
+
+  .nav-bar ui li {
+    /* Other styles */
+    margin: 20px 0; /* Add some vertical space between the list items */
   }
+}
+.nav-bar ui li {
+  display: block;
+  width: fit-content;
+  margin: 58px auto 0 auto;
+  align-items: center;
+  text-align: center;
+  transition: 0.5s;
+  opacity: 1;
+}
+.nav-bar.active ui {
+  opacity: 1;
+}
+.nav-bar ui li a {
+  margin-bottom: 28px;
 }
 
 section {
@@ -184,6 +208,7 @@ section {
 }
 
 h1 {
+  padding-top: 0.5em;
   margin: 0;
   padding-bottom: 10px; /* adjust it to your needs */
 }
@@ -205,5 +230,5 @@ h1 {
 }
 
 .paragraph3 {
-  font-size: 2.8vw;
+  font-size: 0.8em;
 }
