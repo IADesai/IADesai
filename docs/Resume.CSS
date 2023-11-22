@@ -99,3 +99,21 @@ header {
     margin-bottom: 28px;
   }
 }
+
+.centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Set the height as needed */
+  overflow: hidden;
+}
+
+.cropped-image-container {
+  width: 80em; /* Adjust the width as needed */
+}
+
+.cropped-image {
+  width: 100%;
+  display: block;
+  margin-left: -2vw;
+}
