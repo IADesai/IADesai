@@ -6,8 +6,10 @@
   font-family: "Bahnschrift SemiBold";
   box-sizing: border-box;
 }
+html,
 body {
   background-color: #333;
+  height: 100%;
 }
 header {
   background: #424949;
@@ -101,4 +103,31 @@ header {
 }
 p {
   padding: 1vh;
+}
+
+/* Style for larger screens - text alongside the image */
+img {
+  float: left;
+  width: 15em;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 3vw;
+  margin-bottom: 2vh;
+}
+
+/* Media query for screens with a max width of x pixels */
+@media screen and (max-width: 700px) {
+  img {
+    float: none;
+    display: block;
+    margin: 0 auto; /* Center the image */
+  }
+
+  /* You might want to adjust the section style as well */
+  section {
+    padding: 1vw; /* Adjust padding as necessary */
+  }
+
+  /* Additional styles to ensure other elements adjust well */
+  /* ... */
 }
