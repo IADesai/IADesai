@@ -110,7 +110,7 @@ header {
   align-items: center;
   width: 45em;
   margin: auto;
-  padding-top: 2em;
+  padding-top: 3em;
 }
 
 .flex-box {
@@ -169,4 +169,31 @@ a {
     width: 90vw;
     height: calc((100vh - 6vw) / 4);
   }
+}
+
+@media only screen and (max-width: 900px) {
+  /* ...other styles... */
+
+  .nav-bar {
+    z-index: 10;
+    height: 0;
+    position: absolute; /* Ensure position is set for z-index to work */
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #424949;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  .nav-bar.active {
+    height: 450px;
+  }
+
+  /* ...other styles... */
+}
+
+.container {
+  z-index: 1; /* Make sure this is lower than the nav-bar's z-index */
+  /* ...other styles... */
 }
