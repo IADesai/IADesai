@@ -116,3 +116,23 @@ header {
   width: 100%;
   display: block;
 }
+
+.pdf-download-button {
+  position: absolute;
+  top: 10;
+  right: 0;
+  margin: 10px; /* Adjusts the space from the top and right edge */
+}
+
+button {
+  background-color: rgba(76, 175, 79, 0); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Bahnschrift SemiBold";
+}
