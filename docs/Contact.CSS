@@ -6,6 +6,12 @@
   font-family: "Bahnschrift SemiBold";
   box-sizing: border-box;
 }
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevents scrolling */
+}
 body {
   background-color: #333;
 }
@@ -118,9 +124,8 @@ header {
   height: 0;
   padding-top: 100%; /* Padding-top for responsive square boxes */
   position: relative;
-  background-color: rgba(104, 107, 107, 0.937);
+  background-color: rgba(104, 107, 107, 0);
   border-radius: 1em;
-  box-shadow: 0 0.4em 0.8em rgba(222, 218, 218, 0.767);
   overflow: hidden;
 }
 
@@ -161,9 +166,15 @@ a {
 }
 
 @media (max-width: 360px) {
+  .scroll {
+    height: 100%;
+    overflow: scroll; /* Prevents scrolling */
+  }
   .container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin-top: -5em;
+    padding-bottom: 10em;
   }
   .flex-box {
     width: 90vw;
@@ -196,4 +207,15 @@ a {
 .container {
   z-index: 1; /* Make sure this is lower than the nav-bar's z-index */
   /* ...other styles... */
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
