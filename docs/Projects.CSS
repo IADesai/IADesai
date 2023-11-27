@@ -1,3 +1,41 @@
+/* .dark-mode {
+  --background-color: #333;
+  --header-bg-color: #424949;
+  --text-color: white;
+  --box-bg-color: #c0bcbc00;
+  --text-heading-color: #333;
+  --accent-color: antiquewhite;
+  --bento-bg-color: #add8e665;
+}
+
+.light-mode {
+  --background-color: #fff;
+  --header-bg-color: #f2f2f2;
+  --text-color: #333;
+  --box-bg-color: #686868;
+  --text-heading-color: #fff;
+  --accent-color: #000;
+  --bento-bg-color: #555;
+}
+
+body {
+  background-color: var(--background-color);
+}
+header {
+  background: var(--header-bg-color);
+}
+.logo, .nav-bar ul li a {
+  color: var(--text-color);
+}
+.project-box {
+  background-color: var(--box-bg-color);
+  color: var(--text-heading-color);
+}
+.project-content {
+  color: var(--accent-color);
+  background-color: var(--bento-bg-color);
+} */
+
 * {
   margin: 0;
   padding: 0;
