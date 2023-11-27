@@ -211,6 +211,7 @@ header {
   border: 2px solid antiquewhite;
   background-color: #add8e665;
   border-radius: 20px;
+  font-size: 2vw;
 }
 
 .project-content .title,
