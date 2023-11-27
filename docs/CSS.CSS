@@ -3,6 +3,16 @@ body {
   background-color: #333;
 }
 
+.divider {
+  height: 0.3vh; /* or the height you want for your divider */
+  background-color: #fff; /* color of the divider */
+  width: 100%; /* or the width you prefer */
+  margin-top: 19vh;
+  margin-bottom: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .wrapper {
   height: 100vh;
   overflow-y: auto;
@@ -64,7 +74,7 @@ nav {
   padding: 100px box-sizing border-box;
 }
 
-nav div ui {
+nav div ul {
   display: flex;
   flex-direction: row;
   padding: 0; /* Add this to remove default padding */
@@ -77,12 +87,12 @@ nav div ul li {
   text-align: center;
 }
 
-nav div ui li a {
+nav div ul li a {
   font-size: 20px;
   padding: 10px 25px;
   border-radius: 50px;
   transition: 0.2s;
-  margin: 0 7.8vw;
+  margin: auto;
 }
 
 a:hover {
@@ -107,28 +117,24 @@ a:active {
   text-decoration: none;
 }
 
-nav div ui li a {
-  margin: 0 7vw;
-}
-
 @media only screen and (max-width: 1866px) {
-  nav div ui li a {
-    margin: 0 7vw;
+  nav div ul li a {
+    margin: auto;
   }
 }
 @media only screen and (max-width: 1575px) {
-  nav div ui li a {
-    margin: 0 6vw;
+  nav div ul li a {
+    margin: auto;
   }
 }
 @media only screen and (max-width: 1335px) {
-  nav div ui li a {
-    margin: 0 5vw;
+  nav div ul li a {
+    margin: auto;
   }
 }
 @media only screen and (max-width: 1160px) {
-  nav div ui li a {
-    margin: 0 4vw;
+  nav div ul li a {
+    margin: auto;
   }
 }
 @media only screen and (max-width: 1020px) {
@@ -172,8 +178,8 @@ nav div ui li a {
     height: 450px; /* or however tall you want it */
   }
 
-  .nav-bar ui {
-    /* This should be 'ul', not 'ui' */
+  .nav-bar ul {
+    /* This should be 'ul', not 'ul' */
     display: flex;
     flex-direction: column; /* This will stack the list items vertically */
     padding: 0; /* Reset padding */
@@ -182,12 +188,15 @@ nav div ui li a {
     text-align: center; /* Center the text of each list item */
   }
 
-  .nav-bar ui li {
+  .nav-bar ul li {
     /* Other styles */
     margin: 20px 0; /* Add some vertical space between the list items */
   }
+  .divider {
+    margin-top: 9vh;
+  }
 }
-.nav-bar ui li {
+.nav-bar ul li {
   display: block;
   width: fit-content;
   margin: 58px auto 0 auto;
@@ -196,10 +205,10 @@ nav div ui li a {
   transition: 0.5s;
   opacity: 1;
 }
-.nav-bar.active ui {
+.nav-bar.active ul {
   opacity: 1;
 }
-.nav-bar ui li a {
+.nav-bar ul li a {
   margin-bottom: 28px;
 }
 
