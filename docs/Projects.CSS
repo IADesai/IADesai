@@ -167,6 +167,13 @@ header {
     height: 30vw;
     max-height: 35vh;
   }
+  .project-box .extra-images {
+    display: none; /* Hidden initially */
+    width: 100%; /* Full width to line up underneath */
+    opacity: 0; /* Fully transparent initially */
+    visibility: hidden; /* Not visible */
+    transition: visibility 0s linear 0.25s, opacity 0.25s linear; /* Transition on visibility and opacity */
+  }
 }
 
 /* Alternate layout for every other box */
