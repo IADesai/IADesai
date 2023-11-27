@@ -1,102 +1,237 @@
 * {
-    margin:0;
-    padding:0;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Bahnschrift SemiBold';
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Bahnschrift SemiBold";
+  box-sizing: border-box;
 }
 body {
-    background-color: #333;
+  background-color: #333;
 }
-header{
-    background: #424949;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 100px;
+header {
+  background: #424949;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
 }
-.logo{
-    font-size: 28px;
-    color: white
+.logo {
+  font-size: 28px;
+  color: white;
 }
-.hamburger{
-    display: none;
+.hamburger {
+  display: none;
 }
-.nav-bar ul{
-    display: flex;
+.nav-bar ul {
+  display: flex;
 }
-.nav-bar ul li a{
-    display: block;
-    color: white;
-    font-size: 20px;
-    padding: 10px 25px;
-    border-radius: 50px;
-    transition: 0.2s;
-    margin:0 5px;
+.nav-bar ul li a {
+  display: block;
+  color: white;
+  font-size: 20px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.2s;
+  margin: 0 5px;
 }
 .nav-bar ul li a:hover {
-    color: black;
-    background: white;
+  color: black;
+  background: white;
 }
 .nav-bar ul li a.active {
-    color: black;
-    background: white;
+  color: black;
+  background: white;
 }
 @media only screen and (max-width: 1320px) {
-    header {
-        padding:0 50px;
-    }
+  header {
+    padding: 0 50px;
+  }
 }
 @media only screen and (max-width: 1100px) {
-    header {
-        padding:0 30px;
-    }
+  header {
+    padding: 0 30px;
+  }
 }
 @media only screen and (max-width: 900px) {
-    .logo{
-        font-size: 18px;
-        color: white
-    }
-    .hamburger{
-        display: block;
-        cursor: pointer;
-    }
-    .hamburger .line{
-        width: 30px;
-        height: 3px;
-        background: white;
-        margin: 6px 0;
-    }
-    .nav-bar{
-        height: 0;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        width: 100vw;
-        background: #424949;
-        transition:0.5s;
-        overflow: hidden;
-    }
-    .nav-bar.active{
-        height:450px;
-    }
-    .nav-bar ul{
-        display: block;
-        width: fit-content;
-        margin: 80px auto 0 auto;
-        text-align: center;
-        transition: 0.5s;
-        opacity: 0;
-    }
-    .nav-bar.active ul {
-        opacity: 1;
-    }
-    .nav-bar ul li a{
-        margin-bottom:28px;
-    }
+  .logo {
+    font-size: 18px;
+    color: white;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 6px 0;
+  }
+  .nav-bar {
+    height: 0;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #424949;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .nav-bar.active {
+    height: 450px;
+  }
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+  }
+  .nav-bar.active ul {
+    opacity: 1;
+  }
+  .nav-bar ul li a {
+    margin-bottom: 28px;
+  }
+}
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  max-width: none;
 }
 
+/* Single project box styling */
+.project-box {
+  display: flex;
+  width: 80%; /* Adjusted width from 100% for padding considerations */
+  height: 30vw; /* Example: 50% of the viewport width */
+  margin-bottom: 20px;
+  padding: 1em;
+  gap: 0;
+  background-color: #c0bcbc00;
+  color: #333;
+  border-radius: 20px;
+  justify-content: space-between;
+  align-items: stretch; /* Ensure children fill the height */
+}
+
+/* Media query for tablets */
+@media (min-width: 768px) {
+  .project-box {
+    /* Todo: Define the appropriate height for tablet viewports */
+    height: 30vw;
+    max-height: 35vh;
+  }
+}
+
+/* Alternate layout for every other box */
+.project-box.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+/* Bento box styling for image and content */
+.bento-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* height: 100%; */
+  padding: 0; /* Removed padding */
+  gap: 0; /* Removed gap */
+}
+
+/* Image bento box specifics */
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid antiquewhite;
+}
+
+/* Content bento box specifics */
+.project-content {
+  text-align: center;
+  padding: 0 20px;
+  color: antiquewhite;
+  border: 2px solid antiquewhite;
+  background-color: #add8e665;
+  border-radius: 20px;
+}
+
+.project-content .title,
+.project-content .description {
+  /* Inherit text-align center from parent .project-content */
+}
+
+/* Ensure that image and content have equal splitting within the project box */
+.project-image,
+.project-content {
+  width: 50%;
+}
+
+/* Desktops */
+@media (min-width: 992px) {
+  .project-box {
+    transition: max-height 0.25s ease-in; /* Transition on max-height */
+    max-height: 40vh; /* Initial height */
+    overflow: hidden; /* Hide extra content until hover */
+    display: flex; /* Ensure the children are flex items */
+    flex-wrap: wrap; /* Allow for wrapping */
+  }
+
+  .project-box:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-height: 150vh; /* Adjust this as needed for your content */
+    height: auto; /* Let height grow to fit the content */
+  }
+
+  .project-image,
+  .project-content {
+    height: 35vh;
+    width: 50%; /* Ensure these are half the width of the .project-box */
+  }
+
+  .project-box .extra-images {
+    display: none; /* Hidden initially */
+    width: 100%; /* Full width to line up underneath */
+    opacity: 0; /* Fully transparent initially */
+    visibility: hidden; /* Not visible */
+    transition: visibility 0s linear 0.25s, opacity 0.25s linear; /* Transition on visibility and opacity */
+  }
+
+  .project-box:hover .extra-images {
+    display: flex; /* Change display to show the elements */
+    flex-direction: row; /* Align extra images side by side */
+    justify-content: space-between; /* Align them with space in between */
+    opacity: 1; /* Transition to fully opaque */
+    visibility: visible; /* Make visible */
+    transition-delay: 0s; /* Start transition immediately when hovered */
+  }
+
+  /* The extra-img container styles */
+  .project-box .extra-images .extra-img {
+    width: 50%; /* Set the width to half of their container */
+    height: 35vh; /* Keep the same height as .project-content and .project-image */
+    margin-bottom: 1em; /* A gap beneath the images */
+    border: 2px solid antiquewhite;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  /* The image styles inside extra-img */
+  .project-box .extra-images .extra-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the images cover their area */
+  }
+}
