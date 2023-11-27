@@ -55,7 +55,7 @@ header {
     padding: 0 30px;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 910px) {
   .logo {
     font-size: 18px;
     color: white;
@@ -83,6 +83,7 @@ header {
   }
   .nav-bar.active {
     height: 450px;
+    z-index: 10;
   }
   .nav-bar ul {
     display: block;
@@ -132,7 +133,7 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 2vw;
   cursor: pointer;
   font-family: "Bahnschrift SemiBold";
 }
