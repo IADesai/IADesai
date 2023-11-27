@@ -217,6 +217,14 @@ header {
   width: 50%;
 }
 
+.project-box .extra-images {
+  display: none; /* Hidden initially */
+  width: 100%; /* Full width to line up underneath */
+  opacity: 0; /* Fully transparent initially */
+  visibility: hidden; /* Not visible */
+  transition: visibility 0s linear 0.25s, opacity 0.25s linear; /* Transition on visibility and opacity */
+}
+
 /* Desktops */
 @media (min-width: 992px) {
   .project-box {
@@ -237,14 +245,6 @@ header {
   .project-content {
     height: 35vh;
     width: 50%; /* Ensure these are half the width of the .project-box */
-  }
-
-  .project-box .extra-images {
-    display: none; /* Hidden initially */
-    width: 100%; /* Full width to line up underneath */
-    opacity: 0; /* Fully transparent initially */
-    visibility: hidden; /* Not visible */
-    transition: visibility 0s linear 0.25s, opacity 0.25s linear; /* Transition on visibility and opacity */
   }
 
   .project-box:hover .extra-images {
