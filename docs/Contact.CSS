@@ -218,3 +218,17 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (min-aspect-ratio: 1/1) {
+  /* Styles for screens where the width is greater or equal to the height */
+  .background {
+    position: fixed;
+  }
+  header {
+    position: fixed;
+    z-index: 10;
+  }
+  .container {
+    padding-top: 10em;
+  }
+}
