@@ -76,19 +76,22 @@ header {
     margin: 6px 0;
   }
   .nav-bar {
+    z-index: 10;
     height: 0;
-    position: absolute;
+    position: absolute; /* Ensure position is set for z-index to work */
     top: 80px;
     left: 0;
     right: 0;
     width: 100vw;
     background: #424949;
     transition: 0.5s;
-    overflow: hidden;
   }
+
   .nav-bar.active {
-    height: 450px;
+    height: 60vh;
+    overflow: scroll;
   }
+
   .nav-bar ul {
     display: block;
     width: fit-content;
@@ -96,8 +99,12 @@ header {
     text-align: center;
     transition: 0.5s;
     opacity: 0;
+    overflow: scroll;
   }
   .nav-bar.active ul {
+    opacity: 1;
+  }
+  .nav-bar.active ul li a {
     opacity: 1;
   }
   .nav-bar ul li a {
@@ -179,28 +186,6 @@ a {
     width: 90vw;
     height: calc((100vh - 6vw) / 4);
   }
-}
-
-@media only screen and (max-width: 900px) {
-  /* ...other styles... */
-
-  .nav-bar {
-    z-index: 10;
-    height: 0;
-    position: absolute; /* Ensure position is set for z-index to work */
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: #424949;
-    transition: 0.5s;
-    overflow: hidden;
-  }
-
-  .nav-bar.active {
-    height: 450px;
-  }
-
-  /* ...other styles... */
 }
 
 .container {
