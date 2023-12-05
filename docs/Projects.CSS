@@ -278,6 +278,5 @@ header {
   .project-box .extra-images .extra-img img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Ensure the images cover their area */
   }
 }
