@@ -272,6 +272,10 @@ header {
     border: 2px solid antiquewhite;
     border-radius: 20px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
   }
 
   /* The image styles inside extra-img */
