@@ -275,7 +275,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
+  }
+
+  .project-box .extra-images .extra-img:hover {
+    overflow-y: scroll;
   }
 
   /* The image styles inside extra-img */
