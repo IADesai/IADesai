@@ -1,11 +1,13 @@
+var slider = document.querySelector(".slider");
 var imgs = document.querySelectorAll(".slider img");
 var dots = document.querySelectorAll(".dot");
-var currentImg = 0; // index of the first image
-const interval = 8000; // duration(speed) of the slide
+var currentImg = 0;
+const interval = 8000;
+var touchStartX = 0;
+var touchEndX = 0;
 
 function changeSlide(n) {
   for (var i = 0; i < imgs.length; i++) {
-    // reset
     imgs[i].style.opacity = 0;
     dots[i].classList.remove("active");
   }
@@ -28,4 +30,39 @@ function setSlide(n) {
   }, interval);
 }
 
-// Example: setSlide(2); // Set the slide to index 2
+slider.addEventListener("mousedown", handleTouchStart);
+slider.addEventListener("touchstart", handleTouchStart);
+
+slider.addEventListener("mousemove", handleTouchMove);
+slider.addEventListener("touchmove", handleTouchMove);
+
+slider.addEventListener("mouseup", handleTouchEnd);
+slider.addEventListener("touchend", handleTouchEnd);
+
+function handleTouchStart(e) {
+  if (e.type === "touchstart") {
+    touchStartX = e.touches[0].clientX;
+  } else {
+    touchStartX = e.clientX;
+  }
+}
+
+function handleTouchMove(e) {
+  e.preventDefault();
+}
+
+function handleTouchEnd(e) {
+  if (e.type === "touchend") {
+    touchEndX = e.changedTouches[0].clientX;
+  } else {
+    touchEndX = e.clientX;
+  }
+
+  var swipeThreshold = 50; // Adjust this value to control the sensitivity of the swipe
+
+  if (touchEndX < touchStartX - swipeThreshold) {
+    setSlide(currentImg + 1);
+  } else if (touchEndX > touchStartX + swipeThreshold) {
+    setSlide(currentImg - 1);
+  }
+}
