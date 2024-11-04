@@ -32,15 +32,15 @@ header {
 }
 
 .background {
-  transform: translateZ(-10px) scale(2);
+  transform: translate3d(0, 0, -10px) scale(2);
 }
-
 .foreground {
-  transform: translateZ(-5px) scale(1.5);
+  transform: translate3d(0, 0, -5px) scale(1.5);
 }
 
 .background,
 .foreground {
+  will-change: transform;
   position: absolute;
   height: 100%;
   width: 103%;

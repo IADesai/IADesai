@@ -27,7 +27,7 @@
             <li><a href="AboutMe.html" class="active">About Me</a></li>
             <li><a href="Resume.html" class="active">Resume</a></li>
             <li><a href="Projects.html" class="active">Projects</a></li>
-            <li><a href="Contact.html" class="active">Contact</a></li style >
+            <li><a href="Contact.html" class="active">Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -43,10 +43,28 @@
         </p>
       </section>
 
+      <!-- Parallax Scrolling JavaScript -->
       <script>
-        hamburger = document.querySelector(".hamburger");
+        document.addEventListener("scroll", function () {
+          const scrolled = window.scrollY;
+          document.querySelector(
+            ".background"
+          ).style.transform = `translate3d(0, ${
+            scrolled * -0.2
+          }px, -10px) scale(2)`;
+          document.querySelector(
+            ".foreground"
+          ).style.transform = `translate3d(0, ${
+            scrolled * -0.1
+          }px, -5px) scale(1.5)`;
+        });
+      </script>
+
+      <!-- Existing Hamburger Menu JavaScript -->
+      <script>
+        const hamburger = document.querySelector(".hamburger");
         hamburger.onclick = function () {
-          navBar = document.querySelector(".nav-bar");
+          const navBar = document.querySelector(".nav-bar");
           navBar.classList.toggle("active");
         };
       </script>
