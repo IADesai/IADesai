@@ -144,20 +144,24 @@ p {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: column; /* stack vertically */
+  align-items: center; /* center slider horizontally */
+  text-align: center; /* center text underneath */
 }
 
 .slider {
-  width: 25%;
-  height: 500px;
-  position: absolute;
-  margin-right: 20px;
+  width: 90%; /* or a fixed max-width like 500px */
+  max-width: 500px; /* optional limit */
+  aspect-ratio: 3/4; /* adjust to your images */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem; /* space between images and paragraph */
 }
 
 .slider img {
   width: 100%;
   height: 100%;
+  object-fit: cover; /* keeps aspect ratio */
   position: absolute;
   top: 0;
   left: 0;
@@ -171,11 +175,11 @@ p {
   z-index: 0;
 }
 
+/* dots navigation centered below slider */
 .navigation-button {
-  margin-top: 510px;
-  position: absolute;
-  float: left;
-  margin-left: 10%;
+  margin-top: 10px;
+  text-align: center;
+  position: relative;
 }
 
 .dot {
@@ -193,9 +197,11 @@ p {
   background-color: #717171;
 }
 
+/* paragraph centered underneath */
 .woodworkingpara {
-  margin-left: 30%;
-  margin-top: -10px;
+  margin: 0 auto;
+  max-width: 80%; /* optional: keeps line length readable */
+  text-align: justify; /* or center if you prefer */
 }
 
 /* Media Queries */

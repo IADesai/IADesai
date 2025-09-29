@@ -72,6 +72,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 100px box-sizing border-box;
+  position: relative;
+  z-index: 10;
 }
 
 nav div ul {
@@ -130,6 +132,7 @@ h1 {
   padding-top: 0.5em;
   margin: 0;
   padding-bottom: 10px; /* adjust it to your needs */
+  font-size: 6vw;
 }
 
 .paragraph1 {
@@ -140,6 +143,7 @@ h1 {
 .paragraph2 {
   margin: 0;
   padding-bottom: 0px; /* adjust it to your needs */
+  font-size: 2vw;
 }
 
 .pbar {
