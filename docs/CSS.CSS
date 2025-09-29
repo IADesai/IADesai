@@ -21,6 +21,7 @@ body {
 }
 
 header {
+  transform-style: preserve-3d;
   right: 8px;
   position: relative;
   display: flex;
@@ -28,7 +29,7 @@ header {
   align-items: center;
   height: 100%;
   transform-style: preserve-3d;
-  z-index: -1;
+  z-index: 0;
 }
 
 .background {
@@ -168,6 +169,10 @@ h1 {
   margin-top: 0.2em;
 }
 
+.text-section {
+  position: relative;
+}
+
 /* Media query for screens with a max width of x pixels */
 @media screen and (max-width: 700px) {
   .headshot {
@@ -196,6 +201,7 @@ h1 {
 
 .nav-bar {
   width: 100%;
+  z-index: 10;
 }
 
 .nav-bar ul {
@@ -244,14 +250,15 @@ h1 {
 
   .nav-bar {
     height: 0;
-    position: absolute;
-    top: calc(100vh + 80px);
+    position: fixed; /* fixed to viewport */
+    top: calc(100vh + 80px); /* right under the nav bar */
     left: 0;
     right: 0;
-    width: 100vw;
+    width: 100%;
     background: #333;
     transition: 0.5s;
     overflow: hidden;
+    z-index: 10; /* stays above sections */
   }
 
   .nav-bar.active {
@@ -260,20 +267,20 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 500px; /* or however tall you want it */
+    z-index: 10;
+    height: calc(100vh - 80px); /* full-screen dropdown below header */
   }
 
   .nav-bar ul {
     display: flex;
-    flex-direction: column; /* This will stack the list items vertically */
-    list-style: none; /* Remove bullet points from the list */
-    width: 100%; /* Full width of the nav-bar */
-    text-align: center; /* Center the text of each list item */
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    text-align: center;
   }
 
   .nav-bar ul li {
-    margin: 20px 0; /* Add some vertical space between the list items */
-    z-index: 10;
+    margin: 20px 0;
   }
 
   .divider {
