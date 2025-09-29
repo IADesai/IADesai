@@ -41,12 +41,13 @@ header {
 
 .background,
 .foreground {
-  will-change: transform;
   position: absolute;
   height: 100%;
   width: 103%;
   object-fit: cover;
   z-index: -1;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .title {
@@ -75,6 +76,7 @@ nav {
   padding: 100px box-sizing border-box;
   position: relative;
   z-index: 10;
+  will-change: transform, opacity;
 }
 
 nav div ul {
@@ -170,7 +172,10 @@ h1 {
 }
 
 .text-section {
-  position: relative;
+  position: relative; /* if needed */
+  z-index: auto; /* let nav handle stacking */
+  will-change: transform, opacity;
+  transform: translateZ(0); /* force GPU layer for smoother rendering */
 }
 
 /* Media query for screens with a max width of x pixels */
