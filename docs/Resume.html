@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,6 +9,13 @@
     <link rel="icon" type="image/x-icon" href="favicon.png" />
     <link rel="stylesheet" type="text/css" href="master.css" />
     <link rel="stylesheet" type="text/css" href="Resume.CSS" />
+    <noscript>
+      <style>
+        #loading-screen {
+          display: none;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="loading-screen">
@@ -34,13 +41,6 @@
         </ul>
       </div>
     </header>
-    <script>
-      hamburger = document.querySelector(".hamburger");
-      hamburger.onclick = function () {
-        navBar = document.querySelector(".nav-bar");
-        navBar.classList.toggle("active");
-      };
-    </script>
     <div class="pdf-download-button">
       <a href="Ibrahim Ayub Desai CV.pdf" download="Ibrahim Ayub Desai CV.pdf">
         <button>Download PDF</button>

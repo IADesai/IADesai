@@ -2,67 +2,66 @@ var slider = document.querySelector(".slider");
 var imgs = document.querySelectorAll(".slider img");
 var dots = document.querySelectorAll(".dot");
 var currentImg = 0;
-const interval = 8000;
+var interval = 8000;
+var timer = null;
 var touchStartX = 0;
-var touchEndX = 0;
 
 function changeSlide(n) {
+  if (!imgs.length) return;
   for (var i = 0; i < imgs.length; i++) {
     imgs[i].style.opacity = 0;
-    dots[i].classList.remove("active");
+    if (dots[i]) dots[i].classList.remove("active");
   }
-
   currentImg = (n + imgs.length) % imgs.length;
-
   imgs[currentImg].style.opacity = 1;
-  dots[currentImg].classList.add("active");
+  if (dots[currentImg]) dots[currentImg].classList.add("active");
 }
 
-var timer = setInterval(function () {
-  changeSlide(currentImg + 1);
-}, interval);
-
-function setSlide(n) {
+function startTimer() {
   clearInterval(timer);
-  changeSlide(n);
   timer = setInterval(function () {
     changeSlide(currentImg + 1);
   }, interval);
 }
 
-slider.addEventListener("mousedown", handleTouchStart);
-slider.addEventListener("touchstart", handleTouchStart);
-
-slider.addEventListener("mousemove", handleTouchMove);
-slider.addEventListener("touchmove", handleTouchMove);
-
-slider.addEventListener("mouseup", handleTouchEnd);
-slider.addEventListener("touchend", handleTouchEnd);
-
-function handleTouchStart(e) {
-  if (e.type === "touchstart") {
-    touchStartX = e.touches[0].clientX;
-  } else {
-    touchStartX = e.clientX;
-  }
+function setSlide(n) {
+  changeSlide(n);
+  startTimer();
 }
 
-function handleTouchMove(e) {
-  e.preventDefault();
-}
-
-function handleTouchEnd(e) {
-  if (e.type === "touchend") {
-    touchEndX = e.changedTouches[0].clientX;
-  } else {
-    touchEndX = e.clientX;
-  }
-
-  var swipeThreshold = 50; // Adjust this value to control the sensitivity of the swipe
-
-  if (touchEndX < touchStartX - swipeThreshold) {
+function handleSwipeEnd(endX) {
+  var swipeThreshold = 50;
+  if (endX < touchStartX - swipeThreshold) {
     setSlide(currentImg + 1);
-  } else if (touchEndX > touchStartX + swipeThreshold) {
+  } else if (endX > touchStartX + swipeThreshold) {
     setSlide(currentImg - 1);
   }
+}
+
+if (slider) {
+  changeSlide(0);
+  startTimer();
+
+  // Passive listeners: horizontal swipes change slides, vertical scrolling stays native
+  slider.addEventListener(
+    "touchstart",
+    function (e) {
+      touchStartX = e.touches[0].clientX;
+    },
+    { passive: true }
+  );
+  slider.addEventListener(
+    "touchend",
+    function (e) {
+      handleSwipeEnd(e.changedTouches[0].clientX);
+    },
+    { passive: true }
+  );
+
+  slider.addEventListener("mousedown", function (e) {
+    touchStartX = e.clientX;
+  });
+  slider.addEventListener("mouseup", function (e) {
+    handleSwipeEnd(e.clientX);
+  });
 }

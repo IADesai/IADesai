@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,6 +9,13 @@
     <link rel="icon" type="image/x-icon" href="favicon.png" />
     <link rel="stylesheet" type="text/css" href="master.css" />
     <link rel="stylesheet" type="text/css" href="AboutMe.CSS" />
+    <noscript>
+      <style>
+        #loading-screen {
+          display: none;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="loading-screen">
@@ -34,16 +41,10 @@
         </ul>
       </div>
     </header>
-    <script>
-      hamburger = document.querySelector(".hamburger");
-      hamburger.onclick = function () {
-        navBar = document.querySelector(".nav-bar");
-        navBar.classList.toggle("active");
-      };
-    </script>
     <section
       style="
-        font-family: Bahnschrift SemiBold;
+        font-family: "Bahnschrift SemiBold", Bahnschrift, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
         font-size: 1.3em;
         text-align: justify;
         color: whitesmoke;
@@ -101,7 +102,8 @@
     <div class="divider"></div>
     <section
       style="
-        font-family: Bahnschrift SemiBold;
+        font-family: "Bahnschrift SemiBold", Bahnschrift, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
         font-size: 1.3em;
         text-align: justify;
         color: whitesmoke;
@@ -125,8 +127,8 @@
           <img src="Images/woodworking_two.png" alt="woodworkingtwo" />
         </div>
         <div class="navigation-button">
-          <span class="dot active" onclick="changeSlide(0)"></span>
-          <span class="dot" onclick="changeSlide(1)"></span>
+          <span class="dot active" onclick="setSlide(0)"></span>
+          <span class="dot" onclick="setSlide(1)"></span>
         </div>
       </div>
       <script src="AboutMe.js"></script>

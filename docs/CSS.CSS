@@ -1,49 +1,38 @@
 body {
   margin: 0;
   background-color: #333;
+  font-family: "Bahnschrift SemiBold", Bahnschrift, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
 }
 
 .divider {
-  height: 0.3vh; /* or the height you want for your divider */
-  background-color: #fff; /* color of the divider */
-  width: 100%; /* or the width you prefer */
+  height: 0.3vh;
+  background-color: #fff;
+  width: 100%;
   margin-top: 19vh;
   margin-bottom: 5vh;
   margin-left: auto;
   margin-right: auto;
 }
 
-.wrapper {
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  perspective: 10px;
-}
-
+/* Full-height hero; parallax layers are driven by loading.js */
 header {
-  transform-style: preserve-3d;
-  right: 8px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  transform-style: preserve-3d;
-  z-index: 0;
-}
-
-.background {
-  transform: translate3d(0, 0, -10px) scale(2);
-}
-.foreground {
-  transform: translate3d(0, 0, -5px) scale(1.5);
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
 }
 
 .background,
 .foreground {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  width: 103%;
+  width: 100%;
   object-fit: cover;
   z-index: -1;
   will-change: transform;
@@ -51,55 +40,77 @@ header {
 }
 
 .title {
-  font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
   font-size: 8vw;
   text-align: center;
   color: white;
   text-shadow: 0 0 5px black;
+  will-change: transform, opacity;
 }
 
-bar {
-  width: 100%;
-  padding-bottom: 2rem;
-  background-color: #333;
-  color: #333;
+@media (prefers-reduced-motion: no-preference) {
+  .title {
+    animation: hero-title-in 0.9s ease 0.15s backwards;
+  }
+}
+
+@keyframes hero-title-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
 }
 
 nav {
-  font-family: "Bahnschrift SemiBold";
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background: #333;
   width: 100%;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 100px box-sizing border-box;
-  position: relative;
-  z-index: 10;
-  will-change: transform, opacity;
+  box-sizing: border-box;
 }
 
-nav div ul {
+.nav-bar {
+  width: 100%;
+}
+
+.nav-bar ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.nav-bar ul li {
   display: flex;
-  flex-direction: row;
-  padding: 0; /* Add this to remove default padding */
-  list-style: none; /* Add this to remove default list styling */
-  white-space: nowrap; /* Prevents the text from wrapping onto the next line */
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 20px;
+  padding: 10px 25px;
+  border-radius: 20px;
 }
 
-nav div ul li {
-  display: inline-block;
-  text-align: center;
-}
-
-nav div ul li a {
+.nav-bar ul li a {
   font-size: 20px;
   padding: 10px 25px;
   border-radius: 50px;
-  transition: 0.2s;
-  margin: auto;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
 a:hover {
   color: black;
   background: white;
@@ -109,21 +120,7 @@ a.active {
   background: #424949;
 }
 
-a:link {
-  text-decoration: none;
-}
-a:visited {
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: none;
-}
-a:active {
-  text-decoration: none;
-}
-
 section {
-  font-family: "Bahnschrift SemiBold";
   font-size: 3.8vw;
   text-justify: auto;
   padding: 2.5rem;
@@ -134,25 +131,19 @@ section {
 h1 {
   padding-top: 0.5em;
   margin: 0;
-  padding-bottom: 10px; /* adjust it to your needs */
+  padding-bottom: 10px;
   font-size: 6vw;
 }
 
 .paragraph1 {
   margin: 0;
-  padding-bottom: 0px; /* adjust it to your needs */
+  padding-bottom: 0px;
 }
 
 .paragraph2 {
   margin: 0;
-  padding-bottom: 0px; /* adjust it to your needs */
+  padding-bottom: 0px;
   font-size: 2vw;
-}
-
-.pbar {
-  margin: 0;
-  padding: 0px 0; /* adjust it to your needs */
-  letter-spacing: -0.05em;
 }
 
 .paragraph3 {
@@ -171,60 +162,30 @@ h1 {
   margin-top: 0.2em;
 }
 
-.text-section {
-  position: relative; /* if needed */
-  z-index: auto; /* let nav handle stacking */
-  will-change: transform, opacity;
-  transform: translateZ(0); /* force GPU layer for smoother rendering */
-}
-
 /* Media query for screens with a max width of x pixels */
 @media screen and (max-width: 700px) {
   .headshot {
     float: none;
     display: block;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto;
     padding-right: 0;
   }
   h1 {
     padding-top: 0.5em;
     margin: 0;
-    padding-bottom: 10px; /* adjust it to your needs */
+    padding-bottom: 10px;
     text-align: center;
   }
   .paragraph1 {
     margin: 0;
-    padding-bottom: 0px; /* adjust it to your needs */
+    padding-bottom: 0px;
     text-align: center;
   }
   .paragraph2 {
     margin: 0;
-    padding-bottom: 0px; /* adjust it to your needs */
+    padding-bottom: 0px;
     text-align: center;
   }
-}
-
-.nav-bar {
-  width: 100%;
-  z-index: 10;
-}
-
-.nav-bar ul {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 1;
-}
-.nav-bar ul li {
-  display: flex;
-  color: white;
-  font-size: 20px;
-  padding: 10px 25px;
-  border-radius: 20px;
-  transition: 0.2s;
-  align-items: center;
-  justify-content: center;
-  margin: 58px auto 0 auto;
-  margin-bottom: 28px;
 }
 
 @media only screen and (min-width: 1021px) {
@@ -237,6 +198,7 @@ h1 {
   .hamburger {
     display: block;
     cursor: pointer;
+    padding: 8px 0;
   }
   .hamburger .line {
     width: 30px;
@@ -245,35 +207,29 @@ h1 {
     margin: 6px 0;
   }
   nav {
-    background: #333;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: right;
+    justify-content: flex-end;
     padding: 0 32px;
   }
 
+  /* Dropdown anchored directly beneath the nav bar */
   .nav-bar {
-    height: 0;
-    position: fixed; /* fixed to viewport */
-    top: calc(100vh + 80px); /* right under the nav bar */
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    width: 100%;
-    background: #333;
-    transition: 0.5s;
-    overflow: hidden;
-    z-index: 10; /* stays above sections */
-  }
-
-  .nav-bar.active {
-    /* existing styles */
+    height: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    z-index: 10;
-    height: calc(100vh - 80px); /* full-screen dropdown below header */
+    background: #333;
+    overflow: hidden;
+    transition: height 0.4s ease;
+  }
+
+  .nav-bar.active {
+    height: calc(100vh - 80px);
+    height: calc(100svh - 80px);
   }
 
   .nav-bar ul {
@@ -285,7 +241,7 @@ h1 {
   }
 
   .nav-bar ul li {
-    margin: 20px 0;
+    margin: 20px auto;
   }
 
   .divider {

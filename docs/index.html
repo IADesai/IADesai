@@ -5,9 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ibrahim Ayub Desai</title>
+    <meta
+      name="description"
+      content="Personal website of Ibrahim Ayub Desai - software consultant and chemical engineering graduate."
+    />
     <link rel="icon" type="image/x-icon" href="favicon.png" />
     <link rel="stylesheet" type="text/css" href="master.css" />
     <link rel="stylesheet" type="text/css" href="CSS.CSS" />
+    <noscript>
+      <style>
+        #loading-screen {
+          display: none;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="loading-screen">
@@ -18,8 +29,8 @@
     </div>
     <div class="wrapper">
       <header>
-        <img src="Background.JPEG" class="background" />
-        <img src="Foreground.png" class="foreground" />
+        <img src="Background.JPEG" class="background" alt="" fetchpriority="high" />
+        <img src="Foreground.png" class="foreground" alt="" />
         <h1 class="title">Welcome!</h1>
       </header>
       <nav>
@@ -49,33 +60,8 @@
           journey, view my notable creations, and connect with me.
         </p>
       </section>
-
-      <!-- Parallax Scrolling JavaScript -->
-      <script>
-        document.addEventListener("scroll", function () {
-          const scrolled = window.scrollY;
-          document.querySelector(
-            ".background"
-          ).style.transform = `translate3d(0, ${
-            scrolled * -0.2
-          }px, -10px) scale(2)`;
-          document.querySelector(
-            ".foreground"
-          ).style.transform = `translate3d(0, ${
-            scrolled * -0.1
-          }px, -5px) scale(1.5)`;
-        });
-      </script>
-
-      <!-- Existing Hamburger Menu JavaScript -->
-      <script>
-        const hamburger = document.querySelector(".hamburger");
-        hamburger.onclick = function () {
-          const navBar = document.querySelector(".nav-bar");
-          navBar.classList.toggle("active");
-        };
-      </script>
-      <script src="loading.js"></script>
     </div>
+    <!-- Loading screen, mobile nav, parallax and scroll reveals -->
+    <script src="loading.js"></script>
   </body>
 </html>
