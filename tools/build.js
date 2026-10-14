@@ -154,7 +154,13 @@ const BLOCKS = {
 };
 const MARKER = /([ \t]*)<!-- build:([a-z-]+) -->[\s\S]*?<!-- \/build:\2 -->/g;
 
-const handWritten = fs.readdirSync(DOCS).filter((f) => f.endsWith(".html"));
+// Sorted explicitly: directory listing order differs between Windows and Linux (CI),
+// and the sitemap must come out byte-identical on both. Home page first.
+const byName = (a, b) => (a === "index.html" ? -1 : b === "index.html" ? 1 : a.toLowerCase().localeCompare(b.toLowerCase(), "en"));
+const handWritten = fs
+  .readdirSync(DOCS)
+  .filter((f) => f.endsWith(".html"))
+  .sort(byName);
 for (const name of handWritten) {
   const file = path.join(DOCS, name);
   const source = readText(file);
