@@ -1,0 +1,14 @@
+{
+  "name": "ibrahimayubdesai.com",
+  "private": true,
+  "description": "Portfolio website of Ibrahim Ayub Desai. Static site in docs/, served by GitHub Pages.",
+  "scripts": {
+    "build": "node tools/build.js",
+    "check": "node tools/build.js --check",
+    "preview": "node tools/serve.js",
+    "start": "node tools/build.js && node tools/serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

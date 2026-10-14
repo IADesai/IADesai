@@ -1,121 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Projects</title>
-    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.png" />
-    <link rel="stylesheet" type="text/css" href="master.css" />
-    <link rel="stylesheet" type="text/css" href="Projects.CSS" />
-    <noscript>
-      <style>
-        #loading-screen {
-          display: none;
-        }
-      </style>
-    </noscript>
+    <title>Projects | Ibrahim Ayub Desai</title>
+    <meta
+      name="description"
+      content="Projects by Ibrahim Ayub Desai, including the Media Sentiment data pipeline, a TFL cycle hire pricing app, and Halal Stints."
+    />
+    <link rel="canonical" href="https://www.ibrahimayubdesai.com/Projects.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ibrahim Ayub Desai" />
+    <meta property="og:title" content="Projects | Ibrahim Ayub Desai" />
+    <meta property="og:description" content="Data engineering, data visualisation and app projects." />
+    <meta property="og:url" content="https://www.ibrahimayubdesai.com/Projects.html" />
+    <meta property="og:image" content="https://www.ibrahimayubdesai.com/assets/projects/media-sentiment/dashboard.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- build:head -->
+    <meta name="theme-color" content="#f3efe6" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/geist-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script>(function(d){var c=d.documentElement.classList;c.add("js");try{if(!sessionStorage.getItem("iad-visited")&&!matchMedia("(prefers-reduced-motion: reduce)").matches)c.add("has-intro")}catch(e){}})(document);</script>
+    <script src="assets/js/site.js" defer></script>
+    <!-- /build:head -->
   </head>
-  <body>
-    <div id="loading-screen">
-      <img src="Logo.png" id="loading-image" />
-      <div id="loading-bar">
-        <div id="loading-progress"></div>
-      </div>
+  <body class="page-projects">
+    <!-- build:header -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="intro" aria-hidden="true">
+      <img class="intro-mark" src="assets/img/logo-96.webp" width="96" height="96" alt="" />
+      <span class="intro-line"></span>
     </div>
-    <header>
-      <div class="logo">Ibrahim Ayub Desai</div>
-      <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <div class="nav-bar">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="AboutMe.html">About Me</a></li>
-          <li><a href="Resume.html">Resume</a></li>
-          <li><a href="Projects.html" class="active">Projects</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-          <!-- <button id="mode-toggle">Toggle Light/Dark Mode</button> -->
-        </ul>
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img class="brand-mark" src="assets/img/logo-96.webp" width="36" height="36" alt="" />
+          <span class="brand-name">Ibrahim Ayub Desai</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-label">Menu</span>
+          <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutMe.html">About Me</a></li>
+            <li><a href="Resume.html">Resume</a></li>
+            <li><a href="Projects.html" aria-current="page">Projects</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
-    <main class="projects-container">
-      <!-- Box 1 -->
-      <a
-        class="project-box"
-        href="https://github.com/IADesai/media-sentiment"
-        target="_blank"
-      >
-        <div class="bento-container project-image">
-          <img src="Images/image (9).png" alt="Project Title" />
-        </div>
-        <div
-          class="bento-container project-content"
-          style="background-color: black"
-        >
-          <h2 class="title">Media Sentiment</h2>
-          <p class="description">
-            A project designed to evidence the bias of media outlets on current
-            topics.
-          </p>
-        </div>
-        <div class="extra-images">
-          <div class="extra-img">
-            <img src="Images/image (7).png" alt="Extra Image 1" loading="lazy" />
-          </div>
-          <div class="extra-img" style="align-items: start">
-            <img src="Images/image (8).png" alt="Extra Image 2" loading="lazy" />
-          </div>
-          <div class="extra-img">
-            <img
-              src="Images/architecture-diagram.svg"
-              alt="Extra Image 3"
-              style="width: 100%; height: 100%"
-            />
-          </div>
-          <!-- Add more .extra-img elements as needed -->
-        </div>
-      </a>
+    <!-- /build:header -->
 
-      <!-- Box 2 -->
-      <a
-        class="project-box reverse-layout"
-        href="https://github.com/IADesai/Cycle-Pricing-App"
-        target="_blank"
-      >
-        <div class="bento-container project-image">
-          <img src="Images/tfl_home.jpeg" alt="Project Title" />
-        </div>
-        <div
-          class="bento-container project-content"
-          style="background-color: darkblue"
-        >
-          <h2 class="title">Mock Cycle Prices App</h2>
-          <p class="description">
-            A project aimed to adjust TFL cycle hire pricing, via an algorithm
-            that adjusts the price of the cycle hire dependent on hourly and
-            monthly TFL cycle hire data, alongside PM 2.5 pollution levels
-            across the boroughs of London.
-          </p>
-        </div>
-        <div class="extra-images">
-          <div class="extra-img" style="background-color: whitesmoke">
-            <img src="Images/tfl_day.jpeg" alt="Extra Image 1" loading="lazy" />
-          </div>
-          <div class="extra-img" style="background-color: whitesmoke">
-            <img src="Images/tfl_pollution.jpeg" alt="Extra Image 2" loading="lazy" />
-          </div>
-          <div class="extra-img" style="background-color: whitesmoke">
-            <img src="Images/tfl_month.jpeg" alt="Extra Image 3" loading="lazy" />
-          </div>
-          <!-- Add more .extra-img elements as needed -->
-        </div>
-      </a>
-      <!-- Add more boxes as you need... -->
+    <main id="main">
+      <header class="page-head container">
+        <p class="eyebrow"><span class="eyebrow-num"><!-- build:project-count -->04<!-- /build:project-count --></span>Projects</p>
+        <h1 class="page-title">Projects</h1>
+      </header>
+
+      <div class="container">
+        <!-- Project list generated from data/projects.js. Run `npm run build` after editing projects. -->
+        <!-- build:project-index -->
+        <ol class="work-list" role="list">
+          <li class="work is-linked" id="media-sentiment" data-reveal>
+            <span class="work-num" aria-hidden="true">01</span>
+            <div class="work-media">
+              <img src="assets/projects/media-sentiment/dashboard.webp" width="1600" height="887" alt="Media Sentiment Tableau dashboard showing total stories, average BBC and Daily Mail sentiment, and popular topics by source" loading="lazy" decoding="async" sizes="(min-width: 64em) 30vw, 100vw" />
+            </div>
+            <div class="work-body">
+              <h2 class="work-title"><a class="stretched-link" href="projects/media-sentiment.html">Media Sentiment</a></h2>
+              <p class="work-summary">A project designed to evidence the bias of media outlets on current topics.</p>
+              <ul class="tags" role="list"><li>Python</li><li>NLP sentiment analysis</li><li>ChatGPT</li><li>AWS</li><li>PostgreSQL (RDS)</li><li>Terraform</li></ul>
+            </div>
+            <dl class="work-meta">
+              <div><dt>Type</dt><dd>Data engineering</dd></div>
+              <div><dt>Year</dt><dd>2023–</dd></div>
+              <div><dt>Role</dt><dd>Lead Engineer &amp; Quality Assurance</dd></div>
+            </dl>
+            <span class="work-cta" aria-hidden="true">Case study <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </li>
+          <li class="work is-linked" id="cycle-pricing" data-reveal>
+            <span class="work-num" aria-hidden="true">02</span>
+            <div class="work-media">
+              <img src="assets/projects/cycle-pricing/pricing-map.webp" width="1600" height="764" alt="TFL Cycle Hire Pricing app home page with a choropleth map of cycle hire prices across London boroughs" loading="lazy" decoding="async" sizes="(min-width: 64em) 30vw, 100vw" />
+            </div>
+            <div class="work-body">
+              <h2 class="work-title"><a class="stretched-link" href="projects/cycle-pricing.html">Mock Cycle Prices App</a></h2>
+              <p class="work-summary">A project aimed to adjust TFL cycle hire pricing, via an algorithm that adjusts the price of the cycle hire dependent on hourly and monthly TFL cycle hire data, alongside PM 2.5 pollution levels across the boroughs of London.</p>
+              <ul class="tags" role="list"><li>Python</li><li>Dash (Plotly)</li><li>pytest</li><li>Selenium</li><li>Coverage</li><li>flake8</li></ul>
+            </div>
+            <dl class="work-meta">
+              <div><dt>Type</dt><dd>Data visualisation</dd></div>
+              <div><dt>Year</dt><dd>2023</dd></div>
+            </dl>
+            <span class="work-cta" aria-hidden="true">Case study <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </li>
+          <li class="work is-linked" id="halal-stints" data-reveal>
+            <span class="work-num" aria-hidden="true">03</span>
+            <div class="work-media">
+              <div class="cover cover--2" aria-hidden="true">
+                <span class="cover-num">03</span>
+                <span class="cover-title">Halal Stints</span>
+                <span class="cover-meta">Web &amp; mobile app</span>
+              </div>
+            </div>
+            <div class="work-body">
+              <h2 class="work-title"><a class="stretched-link" href="projects/halal-stints.html">Halal Stints</a></h2>
+              <p class="work-summary">A platform for Muslims and non-Muslims to find short-term work that aligns with their values.</p>
+              <ul class="tags" role="list"><li>PetiteVue.js</li><li>Python</li><li>Firebase</li><li>GitHub</li></ul>
+            </div>
+            <dl class="work-meta">
+              <div><dt>Type</dt><dd>Web &amp; mobile app</dd></div>
+              <div><dt>Year</dt><dd>2024–25</dd></div>
+              <div><dt>Role</dt><dd>Solo Developer</dd></div>
+            </dl>
+            <span class="work-cta" aria-hidden="true">Case study <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </li>
+          <li class="work" id="accelorate" data-reveal>
+            <span class="work-num" aria-hidden="true">04</span>
+            <div class="work-media">
+              <div class="cover cover--3" aria-hidden="true">
+                <span class="cover-num">04</span>
+                <span class="cover-title">Accelorate</span>
+                <span class="cover-meta">Ethical startup launchpad</span>
+              </div>
+            </div>
+            <div class="work-body">
+              <h2 class="work-title">Accelorate</h2>
+              <p class="work-summary">Leading creation of an MVP for an ethical startup launchpad.</p>
+              
+            </div>
+            <dl class="work-meta">
+              <div><dt>Type</dt><dd>Ethical startup launchpad</dd></div>
+              <div><dt>Year</dt><dd>2025–</dd></div>
+              <div><dt>Role</dt><dd>Project Lead &amp; Head Developer</dd></div>
+              <div><dt>Status</dt><dd><span class="badge">Pre-launch</span></dd></div>
+            </dl>
+            <span class="work-cta work-cta--muted">Details coming soon</span>
+          </li>
+        </ol>
+        <!-- /build:project-index -->
+      </div>
     </main>
-    <script src="loading.js"></script>
+
+    <!-- build:footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-cta">
+          <p class="eyebrow eyebrow--on-dark">Contact</p>
+          <p class="footer-title">Connect with me.</p>
+          <a class="footer-email" href="mailto:ibrahim.desai02@gmail.com">ibrahim.desai02@gmail.com<svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+        <div class="footer-grid">
+          <nav aria-label="Footer">
+            <ul class="footer-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="AboutMe.html">About Me</a></li>
+              <li><a href="Resume.html">Resume</a></li>
+              <li><a href="Projects.html">Projects</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <ul class="footer-list">
+            <li><a href="https://www.linkedin.com/in/ibrahimdesai/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/IADesai" target="_blank" rel="noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="tel:+447486600030">Phone</a></li>
+          </ul>
+        </div>
+        <div class="footer-base">
+          <p>Ibrahim Ayub Desai</p>
+          <a href="#top" class="footer-top">Back to top</a>
+        </div>
+      </div>
+    </footer>
+    <!-- /build:footer -->
   </body>
 </html>

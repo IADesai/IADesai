@@ -1,0 +1,23 @@
+# Fails if docs/ is out of date with data/projects.js or data/site.js, or if any
+# internal link or image is broken. Read-only: GitHub Pages still deploys docs/ as before.
+name: Site check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate project data, generated pages and links
+        run: node tools/build.js --check
