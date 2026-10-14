@@ -29,6 +29,8 @@ const rawProjects = require(path.join(ROOT, "data/projects.js"));
 
 const errors = [];
 const warnings = [];
+// Read text with LF line endings, so a CRLF checkout (Windows) never looks "out of date".
+const readText = (file) => fs.readFileSync(file, "utf8").replace(/\r\n/g, "\n");
 const rel = (file) => path.relative(ROOT, file).split(path.sep).join("/");
 
 /* ------------------------------------------------------------ validation */
@@ -155,7 +157,7 @@ const MARKER = /([ \t]*)<!-- build:([a-z-]+) -->[\s\S]*?<!-- \/build:\2 -->/g;
 const handWritten = fs.readdirSync(DOCS).filter((f) => f.endsWith(".html"));
 for (const name of handWritten) {
   const file = path.join(DOCS, name);
-  const source = fs.readFileSync(file, "utf8");
+  const source = readText(file);
   const ctx = { root: "", current: name, site, projects };
   const result = source.replace(MARKER, (match, indent, block) => {
     if (!BLOCKS[block]) {
@@ -224,7 +226,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-const changed = [...outputs].filter(([file, content]) => !fs.existsSync(file) || fs.readFileSync(file, "utf8") !== content);
+const changed = [...outputs].filter(([file, content]) => !fs.existsSync(file) || readText(file) !== content);
 
 if (CHECK_ONLY) {
   const problems = [...changed.map(([f]) => rel(f) + " is out of date"), ...stale.map((f) => rel(f) + " should be removed")];

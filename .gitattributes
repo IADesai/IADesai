@@ -1,0 +1,14 @@
+# Keep LF line endings on every OS so `npm run build` output (LF) always matches
+# what git checks out. Without this, Windows (core.autocrlf=true) converts pages to
+# CRLF and `npm run check` / the Site check action report them as out of date.
+* text=auto eol=lf
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.JPEG binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff2 binary
