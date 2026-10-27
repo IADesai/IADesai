@@ -39,8 +39,47 @@
  */
 module.exports = [
   {
+    slug: "seed-melon",
+    title: "Seed Melon",
+    published: true,
+    featured: true,
+    category: "Ethical startup launchpad",
+    year: "2025–",
+    period: "Sep 2025 – Present",
+    status: "Pre-launch",
+    role: "Project Lead & Head Developer",
+    team: "",
+    shortDescription:
+      "An ethical startup launchpad: a next-generation platform for startups, launching soon in the UK, EU and US.",
+    description: [
+      "Seed Melon is an ethical startup launchpad, a platform built to help founders get new ventures off the ground in a way that stays true to their values.",
+      "I am leading the creation of the MVP as project lead and head developer. The pre-launch site is live at seedmelon.com, where people can sign up to be notified at launch.",
+    ],
+    technologies: [],
+    thumbnail: {
+      src: "assets/projects/seed-melon/landing.webp",
+      alt: "Seed Melon pre-launch page: the Seed Melon wordmark with a watermelon slice, over a green-to-red gradient, with an email sign-up box",
+    },
+    gallery: [],
+    liveUrl: "https://seedmelon.com/",
+    repositoryUrl: "",
+    facts: [],
+    caseStudy: [
+      {
+        heading: "My role",
+        paragraphs: [],
+        points: [
+          "Project lead and head developer",
+          "Leading creation of the MVP for an ethical startup launchpad",
+          "Pre-launch stage, with a live landing page and launch waitlist",
+        ],
+      },
+    ],
+  },
+
+  {
     slug: "media-sentiment",
-    title: "Media Sentiment",
+    title: "Coup",
     published: true,
     featured: true,
     category: "Data engineering",
@@ -49,16 +88,16 @@ module.exports = [
     role: "Lead Engineer & Quality Assurance",
     team: "Originally a team of 4",
     shortDescription:
-      "A project designed to evidence the bias of media outlets on current topics.",
+      "Media vs public: how differently the press and the public feel about the same stories. The evolution of my Media Sentiment pipeline.",
     description: [
-      "Despite reporting on the same topics, different media organisations can have wildly different coverage and messages. Collecting and analysing data on how coverage differs between organisations helps us understand the media landscape and its bias.",
-      "The pipeline uses NLP to calculate the attitude within text used by the BBC, the Daily Mail and Reddit/BlueSky, comparing the negative or positive sentiment held on current topics, with each story categorised by AI.",
-      "The project now lives on as Coup, the Media Sentiment Analyser at coup.digital.",
+      "Despite reporting on the same topics, different media organisations can have wildly different coverage and messages. Coup measures that gap: it scores the sentiment of news coverage and of public posts on the same topics, and shows where the two disagree.",
+      "Coup started life in 2023 as Media Sentiment, a data pipeline that used NLP to calculate the attitude within text from the BBC, the Daily Mail and Reddit, with each story categorised by AI. It has since grown into Coup, with a new public front end at coup.digital.",
+      "Alongside the sentiment comparison, Coup surfaces real reporting from inside Sudan, from the people closest to it, so readers can make up their own minds.",
     ],
     technologies: [
       "Python",
       "NLP sentiment analysis",
-      "ChatGPT",
+      "AI summarisation",
       "AWS",
       "PostgreSQL (RDS)",
       "Terraform",
@@ -68,36 +107,51 @@ module.exports = [
       "GitHub Actions",
     ],
     thumbnail: {
-      src: "assets/projects/media-sentiment/dashboard.webp",
-      alt: "Media Sentiment Tableau dashboard showing total stories, average BBC and Daily Mail sentiment, and popular topics by source",
+      src: "assets/projects/coup/title-screen.webp",
+      alt: "Coup title screen: a yellow pixel-art COUP logo above the words Media vs Public and Press Start, on a dark retro grid",
     },
     gallery: [
       {
+        src: "assets/projects/coup/title-screen.webp",
+        alt: "Coup title screen with a pixel-art logo and a Press Start prompt",
+        caption: "Coup's arcade-style title screen at coup.digital.",
+      },
+      {
+        src: "assets/projects/coup/topic-cloud.webp",
+        alt: "A cloud of 3D topic words such as United States, Brazil and Ukraine, with World and Sudan tabs above",
+        caption: "Pick a word: the topics in today's news, with separate World and Sudan views.",
+      },
+      {
+        src: "assets/projects/coup/topic-detail.webp",
+        alt: "Topic view for Brazil: public sentiment +13% beside media sentiment +24%, an AI summary of the headlines, and sentiment by outlet",
+        caption: "Topic view: public vs media sentiment, an AI summary of the headlines, the gap between them, and an outlet-by-outlet breakdown.",
+      },
+      {
         src: "assets/projects/media-sentiment/dashboard.webp",
         alt: "Tableau dashboard: 5,681 stories, average sentiment per outlet, and a bar chart of popular topics by source",
-        caption: "Main Tableau dashboard: headline figures and popular topics by source, filterable by outlet and date.",
+        caption: "Where it started (2023): the main Tableau dashboard, with headline figures and popular topics by source.",
       },
       {
         src: "assets/projects/media-sentiment/stories-by-topic.webp",
         alt: "Word cloud of story topics beside a table of headlines with their sentiment scores",
-        caption: "Stories by topic: a topic word cloud alongside individual headlines and their sentiment scores.",
+        caption: "2023: stories by topic, with a topic word cloud alongside individual headlines and their sentiment scores.",
       },
       {
         src: "assets/projects/media-sentiment/email-report.webp",
         alt: "Media Sentiment Report PDF with BBC and Daily Mail sentiment gauges, most popular topics, and highest and lowest sentiment stories",
-        caption: "The emailed PDF report: sentiment gauges, the most popular topics, and the day's highest and lowest sentiment stories.",
+        caption: "2023: the emailed PDF report, with sentiment gauges, the most popular topics, and the day's highest and lowest sentiment stories.",
       },
       {
         src: "assets/projects/media-sentiment/architecture-diagram.svg",
         alt: "Architecture diagram of the AWS Step Functions workflow powering the pipelines",
-        caption: "System architecture on AWS.",
+        caption: "2023: the original system architecture on AWS.",
       },
     ],
     liveUrl: "https://coup.digital/",
     repositoryUrl: "https://github.com/IADesai/media-sentiment",
     facts: [
-      { value: "2", label: "Dashboards built" },
-      { value: "−1 → 1", label: "Sentiment scale" },
+      { value: "10+", label: "News outlets compared" },
+      { value: "−100% → +100%", label: "Sentiment scale" },
     ],
     caseStudy: [
       {
@@ -112,7 +166,19 @@ module.exports = [
         ],
       },
       {
-        heading: "How it works",
+        heading: "From Media Sentiment to Coup",
+        paragraphs: [
+          "The first version compared the BBC and the Daily Mail against Reddit, and reported its findings through Tableau dashboards and a daily email. Coup takes the same idea to a public audience.",
+        ],
+        points: [
+          "Media coverage now spans outlets including the BBC, The Guardian, Al Jazeera, the New York Times, Sky News, France 24 and the Daily Mail",
+          "Public sentiment now comes from Bluesky and Lemmy",
+          "Every topic shows the gap between media and public sentiment, an AI summary of the headlines, and the most negative and positive stories",
+          "A dedicated Sudan view puts ground-level reporting alongside the numbers",
+        ],
+      },
+      {
+        heading: "How the original pipeline works",
         paragraphs: [
           "UK news articles are extracted from different RSS feeds, and related articles from other outlets are matched up alongside comments about the same story on Reddit.",
         ],
@@ -204,62 +270,5 @@ module.exports = [
         ],
       },
     ],
-  },
-
-  {
-    slug: "halal-stints",
-    title: "Halal Stints",
-    published: true,
-    featured: false,
-    category: "Web & mobile app",
-    year: "2024–25",
-    period: "Dec 2024 – Jul 2025",
-    role: "Solo Developer",
-    team: "",
-    shortDescription:
-      "A platform for Muslims and non-Muslims to find short-term work that aligns with their values.",
-    description: [
-      "An app (web and mobile) built for finding short-term jobs for employees, and filling spaces for employers, both of whom share the same ethics and morals.",
-    ],
-    technologies: ["PetiteVue.js", "Python", "Firebase", "GitHub"],
-    thumbnail: null,
-    gallery: [],
-    liveUrl: "",
-    repositoryUrl: "https://github.com/IADesai/halalstints",
-    facts: [],
-    caseStudy: [
-      {
-        heading: "Build",
-        paragraphs: [],
-        points: [
-          "Ideated and built the app solo",
-          "PetiteVue.js for the front-end and Python for the back-end",
-          "DevOps done with Firebase, and versioned with GitHub",
-        ],
-      },
-    ],
-  },
-
-  {
-    slug: "accelorate",
-    title: "Accelorate",
-    published: true,
-    featured: false,
-    detailPage: false,
-    category: "Ethical startup launchpad",
-    year: "2025–",
-    period: "Sep 2025 – Present",
-    status: "Pre-launch",
-    role: "Project Lead & Head Developer",
-    team: "",
-    shortDescription: "Leading creation of an MVP for an ethical startup launchpad.",
-    description: [],
-    technologies: [],
-    thumbnail: null,
-    gallery: [],
-    liveUrl: "",
-    repositoryUrl: "",
-    facts: [],
-    caseStudy: [],
   },
 ];

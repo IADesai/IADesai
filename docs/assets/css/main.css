@@ -641,6 +641,15 @@ strong {
   box-shadow: 1rem 1rem 0 -1px var(--paper), 1rem 1rem 0 0 var(--coral-ink);
 }
 
+/* Pixel "generating" overlay drawn by site.js on the home-page headshot */
+.portrait-pixels {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+
 .portrait figcaption {
   margin-top: 1.6rem;
   font-family: var(--font-mono);
@@ -1393,19 +1402,43 @@ strong {
   max-width: 34ch;
 }
 
+.milestone-link {
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-xs);
+  color: var(--coral-on-dark);
+  text-underline-offset: 0.2em;
+}
+
 @media (min-width: 52em) {
   .milestones {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--gutter);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 var(--gutter);
     border-top: 1px solid var(--on-dark-line);
   }
   .milestone {
-    padding: var(--space-xl) 0 0;
+    padding: var(--space-xl) 0 var(--space-xl);
     border-left: 0;
   }
   .milestone::before {
     left: 0;
     top: -6px;
+  }
+  /* second row of the 2-up grid gets its own flow line */
+  .milestone:nth-child(n + 3) {
+    border-top: 1px solid var(--on-dark-line);
+  }
+}
+
+@media (min-width: 72em) {
+  .milestones {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .milestone {
+    padding-bottom: 0;
+  }
+  .milestone:nth-child(n + 3) {
+    border-top: 0;
   }
 }
 

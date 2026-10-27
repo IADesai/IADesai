@@ -105,7 +105,7 @@ and that part of the page simply doesn't appear:
 - No `liveUrl` / `repositoryUrl`: the button is hidden.
 - No `gallery`, `facts`, `technologies` or `caseStudy`: those sections are skipped.
 - `detailPage: false`: the project is listed without a case-study page, which is useful for
-  projects that aren't ready to write up yet (see *Accelorate*).
+  projects that aren't ready to write up yet.
 
 ## Rewrite an existing project
 
