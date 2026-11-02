@@ -2051,8 +2051,18 @@ strong {
   color: var(--ink-2);
 }
 
-.entry-sub {
-  margin-top: var(--space-m);
+.resume-profile {
+  max-width: 72ch;
+  line-height: 1.65;
+}
+
+.resume-strengths {
+  margin-bottom: var(--space-l);
+}
+
+.resume-strengths li {
+  font-size: var(--step--1);
+  color: var(--ink);
 }
 
 .skills > div {
