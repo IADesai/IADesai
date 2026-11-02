@@ -1,9 +1,9 @@
 <h1 align="center">Hello 👋, I am Ibrahim</h1>
-<h3 align="center">A passionate software & data engineer, now open to work!</h3>
+<h3 align="center">A passionate data engineer, now open to work!</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=iadesai&label=Profile%20views&color=0e75b6&style=flat" alt="iadesai" /> </p>
 
-- 🌱 I’m currently learning **Mobile App Development**
+- 🌱 I’m currently learning **Cyber Security**
   
 - Have a look at some of my pinned repositories 📌
 
