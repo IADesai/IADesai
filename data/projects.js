@@ -212,7 +212,7 @@ module.exports = [
     role: "",
     team: "The Coding Cyclists",
     shortDescription:
-      "A project aimed to adjust TFL cycle hire pricing, via an algorithm that adjusts the price of the cycle hire dependent on hourly and monthly TFL cycle hire data, alongside PM 2.5 pollution levels across the boroughs of London.",
+      "An algorithm that adjusts TFL cycle hire prices using hourly and monthly hire data, alongside PM 2.5 pollution levels across the boroughs of London.",
     description: [
       "The aim was to create a price map that increases TFL revenue by promoting cycle hire and taking advantage of rush hour prices, as well as promoting cycle hire in highly polluted boroughs with hopes to reduce pollution across greater London.",
     ],

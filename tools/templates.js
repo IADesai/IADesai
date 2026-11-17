@@ -213,7 +213,7 @@ function featuredProjects({ projects, root }) {
         `      <p class="eyebrow"><span class="eyebrow-num">${pad(p.number)}</span>${esc([p.category, p.year].filter(Boolean).join(" · "))}</p>`,
         `      <h3 class="feature-title">${titleLink(p, root)}</h3>`,
         `      <p class="feature-summary">${esc(p.shortDescription)}</p>`,
-        `      ${tagList(p.technologies.slice(0, 5))}`,
+        p.technologies.length ? `      ${tagList(p.technologies.slice(0, 5))}` : "",
         p.detailPage ? `      <span class="text-cta" aria-hidden="true">View case study ${icons.arrowRight}</span>` : "",
         "    </div>",
         "  </li>"
@@ -238,7 +238,7 @@ function projectIndex({ projects, root }) {
         '    <div class="work-body">',
         `      <h2 class="work-title">${titleLink(p, root)}</h2>`,
         `      <p class="work-summary">${esc(p.shortDescription)}</p>`,
-        `      ${tagList(p.technologies.slice(0, 6))}`,
+        p.technologies.length ? `      ${tagList(p.technologies.slice(0, 6))}` : "",
         "    </div>",
         '    <dl class="work-meta">',
         p.category && `      <div><dt>Type</dt><dd>${esc(p.category)}</dd></div>`,

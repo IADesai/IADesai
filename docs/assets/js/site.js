@@ -424,17 +424,22 @@
     var text = button.querySelector("[data-copy-label]");
     if (text) text.setAttribute("aria-live", "polite");
     button.hidden = false;
+    var reset = 0;
+    var flash = function (message) {
+      if (!text) return;
+      text.textContent = message;
+      clearTimeout(reset);
+      reset = setTimeout(function () {
+        text.textContent = "Copy";
+      }, 2000);
+    };
     button.addEventListener("click", function () {
       navigator.clipboard.writeText(button.getAttribute("data-copy")).then(
         function () {
-          if (!text) return;
-          text.textContent = "Copied";
-          setTimeout(function () {
-            text.textContent = "Copy";
-          }, 2000);
+          flash("Copied");
         },
         function () {
-          if (text) text.textContent = "Copy failed";
+          flash("Copy failed");
         }
       );
     });

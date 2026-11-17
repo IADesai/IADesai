@@ -500,13 +500,17 @@ strong {
   z-index: 1;
 }
 
-.stretched-link:focus-visible {
-  outline: none;
-}
+/* Move the focus ring from the title to the whole card, but only where :has() works;
+   older browsers keep the default ring on the link itself. */
+@supports selector(:has(*)) {
+  .stretched-link:focus-visible {
+    outline: none;
+  }
 
-.is-linked:has(.stretched-link:focus-visible) {
-  outline: 2px solid var(--focus);
-  outline-offset: 6px;
+  .is-linked:has(.stretched-link:focus-visible) {
+    outline: 2px solid var(--focus);
+    outline-offset: 6px;
+  }
 }
 
 /* Typographic cover for projects without an image */
@@ -927,28 +931,28 @@ strong {
   --focus: var(--coral-on-dark);
   background: var(--night);
   color: var(--on-dark);
-  padding-top: var(--section);
+  padding-top: clamp(3rem, 2.25rem + 3vw, 5rem);
 }
 
 .footer-cta {
-  padding-bottom: clamp(3rem, 2rem + 4vw, 6rem);
+  padding-bottom: clamp(2.25rem, 1.75rem + 2vw, 3.5rem);
 }
 
 .footer-title {
-  margin-top: var(--space-l);
+  margin-top: var(--space-m);
   font-family: var(--font-display);
-  font-size: var(--step-5);
-  line-height: 0.95;
-  letter-spacing: -0.035em;
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 .footer-email {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  margin-top: var(--space-xl);
+  margin-top: var(--space-l);
   font-family: var(--font-display);
-  font-size: var(--step-2);
+  font-size: var(--step-1);
   text-decoration: none;
   border-bottom: 1px solid var(--coral-on-dark);
   overflow-wrap: anywhere;
@@ -965,6 +969,27 @@ strong {
 
 .footer-email:hover .icon {
   transform: translate(0.15em, -0.15em);
+}
+
+/* The home page closes on the full-size call to action; other pages get the compact one */
+.page-home .site-footer {
+  padding-top: var(--section);
+}
+
+.page-home .footer-cta {
+  padding-bottom: clamp(3rem, 2rem + 4vw, 6rem);
+}
+
+.page-home .footer-title {
+  margin-top: var(--space-l);
+  font-size: var(--step-5);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.page-home .footer-email {
+  margin-top: var(--space-xl);
+  font-size: var(--step-2);
 }
 
 .footer-grid {
@@ -1979,6 +2004,15 @@ strong {
 }
 
 /* 12. Resume --------------------------------------------------------------- */
+.resume-role {
+  margin-top: var(--space-m);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .resume-contact {
   display: flex;
   flex-wrap: wrap;
@@ -2051,6 +2085,17 @@ strong {
   color: var(--ink-2);
 }
 
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.6rem;
+  margin-top: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .resume-profile {
   max-width: 72ch;
   line-height: 1.65;
@@ -2098,6 +2143,17 @@ strong {
   }
   .skills > div {
     grid-template-columns: 14rem 1fr;
+  }
+  /* Where subgrid works, the label column is exactly as wide as its longest label */
+  @supports (grid-template-columns: subgrid) {
+    .skills {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+    }
+    .skills > div {
+      grid-column: 1 / -1;
+      grid-template-columns: subgrid;
+    }
   }
 }
 
@@ -2321,9 +2377,18 @@ strong {
 }
 
 /* 15. Print (mainly for the resume) ---------------------------------------- */
+@page {
+  margin: 13mm 15mm;
+}
+
 @media print {
-  .site-header,
+  /* Everything is sized in rem, so one root size scales the whole sheet */
+  :root {
+    font-size: 9pt;
+  }
   .site-footer,
+  .site-nav,
+  .nav-toggle,
   .skip-link,
   .intro,
   .button-row,
@@ -2331,22 +2396,111 @@ strong {
     display: none !important;
   }
   body {
+    display: block;
+    min-height: 0;
     background: #fff;
-    font-size: 11pt;
+    line-height: 1.45;
+  }
+  /* The header prints as a letterhead: logo and name only */
+  .site-header {
+    position: static;
+    background: none;
+    border: 0;
+  }
+  .header-inner {
+    min-height: 0;
+    padding-block: 0 0.75rem;
+  }
+  /* Nothing waits on a scroll reveal or stays pinned on paper */
+  .reveal-ready [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .case-aside,
+  .about-aside,
+  .woodwork-copy {
+    position: static;
   }
   .page-head {
-    padding: 0 0 1rem;
+    padding: 0 0 0.75rem;
   }
   .page-title {
-    font-size: 28pt;
-  }
-  .resume-section {
-    break-inside: avoid-page;
-  }
-  .entry {
-    break-inside: avoid;
+    margin-top: var(--space-s);
+    font-size: 24pt;
   }
   a {
     text-decoration: none;
+  }
+
+  /* Resume: tightened to fit two sheets. Sections are plain blocks so they can
+     run across a page break; single entries and skill rows stay whole. */
+  .page-resume .site-header,
+  .page-resume .page-head .eyebrow {
+    display: none;
+  }
+  .page-resume .page-title {
+    margin-top: 0;
+  }
+  .resume-role {
+    margin-top: var(--space-xs);
+  }
+  .resume-contact {
+    margin-top: var(--space-s);
+    font-size: var(--step--2);
+  }
+  .resume {
+    padding-bottom: 0;
+  }
+  .resume-section {
+    display: block;
+    padding-block: 0.65rem;
+  }
+  .resume-heading {
+    margin-bottom: 0.6rem;
+    font-size: var(--step--2);
+    break-after: avoid;
+  }
+  .resume-profile {
+    max-width: none;
+    line-height: 1.5;
+  }
+  .resume-strengths {
+    margin-bottom: var(--space-s);
+  }
+  .skills > div {
+    grid-template-columns: 14rem 1fr;
+    padding-block: 0.28rem;
+    break-inside: avoid;
+  }
+  @supports (grid-template-columns: subgrid) {
+    .skills {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+    }
+    .skills > div {
+      grid-column: 1 / -1;
+      grid-template-columns: subgrid;
+    }
+  }
+  .entry {
+    grid-template-columns: 10.5rem 1fr;
+    gap: 0 var(--space-m);
+    break-inside: avoid;
+  }
+  .entry + .entry {
+    margin-top: 0.55rem;
+    padding-top: 0.55rem;
+  }
+  .entry-title {
+    font-size: 12pt;
+  }
+  .entry-role {
+    margin-top: 0.15rem;
+  }
+  .points {
+    margin-top: 0.4rem;
+  }
+  .points li + li {
+    margin-top: 0.15rem;
   }
 }
